@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Quiz</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 20px;
+        }
+
+        .quiz {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .alternativa {
+            background: #eeeeee;
+        }
+
+        .alternativa:hover {
+            background: #dddddd;
+        }
+
+        #resultado {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="quiz">
+
+    <h1>Meu Quiz</h1>
+
+    <h2>1. Qual é a capital do Brasil?</h2>
+
+    <button class="alternativa" onclick="responder('A')">
+        A) Rio de Janeiro
+    </button>
+
+    <button class="alternativa" onclick="responder('B')">
+        B) Brasília
+    </button>
+
+    <button class="alternativa" onclick="responder('C')">
+        C) São Paulo
+    </button>
+
+    <p id="resultado"></p>
+
+</div>
+
+<script>
+
+let pontos = 0;
+
+function responder(resposta) {
+
+    if (resposta === "B") {
+        pontos++;
+        document.getElementById("resultado").innerText =
+            "🎉 Acertou! Pontos: " + pontos;
+    } else {
+        document.getElementById("resultado").innerText =
+            "❌ Errou! A resposta correta era Brasília.";
+    }
+
+}
+
+</script>
+
+</body>
+</html>
